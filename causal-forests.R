@@ -1,4 +1,3 @@
-## Not run:
 # Train a causal forest.
 n = 50; p = 10
 X = matrix(rnorm(n*p), n, p)
@@ -18,11 +17,10 @@ average_treatment_effect(c.forest, target.sample = "all")
 average_treatment_effect(c.forest, target.sample = "treated")
 # Estimate the conditional average treatment effect on samples with positive X[,1].
 average_treatment_effect(c.forest, target.sample = "all", X[,1] > 0)
-## End(Not run)
+
 
 ## Boosted regression
 
-## Not run:
 # Train a boosted regression forest.
 n = 50; p = 10
 X = matrix(rnorm(n*p), n, p)
@@ -36,9 +34,8 @@ boost.pred = predict(boosted.forest, X.test)
 boost.pred = predict(boosted.forest)
 #Check how many boosting iterations were used
 print(length(boosted.forest$forests))
-## End(Not run)
 
-## Not run:
+
 # Train a causal forest.
 n = 50; p = 10
 X = matrix(rnorm(n*p), n, p)
@@ -89,5 +86,4 @@ c.forest = custom_forest(X, Y)
 X.test = matrix(0, 101, p)
 X.test[,1] = seq(-2, 2, length.out = 101)
 c.pred = predict(c.forest, X.test)
-## End(Not run)
 
