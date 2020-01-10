@@ -1,3 +1,5 @@
+##This is NOT causal inference. But it is relevant to this lecture.
+
 rm(list=ls())
 #install.packages("CausalImpact")
 library(CausalImpact)
